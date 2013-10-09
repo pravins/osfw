@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content_main %}
+    {% if error %}
+        <p style="color: red;">Please submit a search term.</p>
+    {% endif %}
+   <form action="/index/search/" method="get">
+        <input type="text" name="q">
+        <input type="submit" value="Search"><BR><BR>
+          <label>Search by</label>            
+
+          <input type = "radio" name = "stype" id = "lang" value = "lang" checked = "checked" />
+          <label for = "sizeMed">Language Tag</label>
+
+          <input type = "radio" name = "stype" id = "script" value = "script" />
+          <label for = "sizeSmall">Script Tag</label>
+
+    </form>
+{% endblock %}

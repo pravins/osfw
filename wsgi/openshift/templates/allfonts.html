@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content_main %}
+<h1>Available font families</h1>
+{% for osfw in osfws %}
+<div>
+<h2><a href="/get/{{ osfw.id }}/"> {{ osfw.familyname }} </a> <h2>
+<img src="{% static "fontimages/"  %}{{ osfw.imagename}}-sample.png" alt="sample-image" >
+<p>{{osfw.likes}} people liked this font</p>
+
+</div>
+{% endfor %}
+	
+{% endblock %}
