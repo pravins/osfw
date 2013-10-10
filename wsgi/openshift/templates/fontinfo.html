@@ -10,7 +10,7 @@
         	 <li> <b> Languages supported:- </b>{{ osfw.langsupport }} </li>
         	 <li> <b> License:-</b> {{ osfw.license }} </li>
         	<li> <b> Copyright:-</b> {{ osfw.copyright }} </li> <br><br>
-        	 <img src="  {% static "fontimages/"  %}{{ osfw.imagename}}.png " alt="Smiley face" width=600px  border=1> 
+        	 <img src="  {% static "fontimages/"  %}{{ osfw.ttffilename[0:-4]}}.png " alt="Smiley face" width=600px  border=1> 
 		<li> <h3> Download pdf showing Unicode coverage of <a href="  {% static "ttf/"  %}{{ osfw.imagename}}.pdf  "> {{ osfw.familyname }} </a> </h3> </li>
 		<li> <h3> Download ttf of <a href="  {% static "ttf/"  %}{{ osfw.ttffilename}}  "> {{ osfw.familyname }} </a> </h3> </li>
 		</ul>
