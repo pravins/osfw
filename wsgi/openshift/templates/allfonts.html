@@ -7,7 +7,7 @@
 {% for osfw in osfws %}
 <div>
 <h2><a href="/get/{{ osfw.id }}/"> {{ osfw.familyname }} </a> <h2>
-<img src="{% static "fontimages/"  %}{{ osfw.imagename}}-sample.png" alt="sample-image" >
+<img src="{% static "fontimages/"  %}{{ osfw.ttffilename|slice:":-4"}}-sample.png" alt="sample-image" >
 <p>{{osfw.likes}} people liked this font</p>
 
 </div>
