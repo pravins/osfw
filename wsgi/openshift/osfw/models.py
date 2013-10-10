@@ -9,10 +9,8 @@ class Osfw(models.Model):
 	upstreamurl = models.CharField(max_length=300)
 	langsupport = models.CharField(max_length=1000)
 	scriptsupport = models.CharField(max_length=1000)
-	copyright = models.CharField(max_length=1000)
-	fontformat = models.CharField(max_length=50)
 	ttffilename = models.CharField(max_length=100)
-	imagename = models.CharField(max_length=200)
+	copyright = models.CharField(max_length=1000)
 	likes = models.IntegerField(default=0)
 	
 	def __unicode__(self):
