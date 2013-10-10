@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^standards/$', 'osfw.views.standards'),
     url(r'^peoples/$', 'osfw.views.peoples'),
     url(r'^contact/$', 'osfw.views.contact'),
+    url(r'^allfonts/$', 'osfw.views.allfonts'),
 
     # url(r'^openshift/', include('openshift.foo.urls')),
 
