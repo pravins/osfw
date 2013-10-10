@@ -67,6 +67,6 @@ def search(request):
 			osfws = Osfw.objects.filter(langsupport__icontains=q)
 		else:
 			osfws = Osfw.objects.filter(scriptsupport__icontains=q)
- 	        return render(request, 'search_results.html',{'osfws': osfws, 'query': q})
+ 	        return render(request, 'searchresults.html',{'osfws': osfws, 'query': q})
 
     return render(request, 'searchfonts.html',{'error': error})

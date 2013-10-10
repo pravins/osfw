@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content_main %}
+<p>You searched for: <strong>{{ query }}</strong></p>
+
+{% if osfws %}
+    <p>Found {{ osfws|length }} Fonts{{ osfws|pluralize }}.</p>
+    <ul>
+        {% for osfw in osfws %}
+        <li><h2><a href="/get/{{ osfw.id }}/"> {{ osfw.familyname }} </a> <h2></li>
+         <img src="  {% static "fontimages/"  %}{{ osfw.imagename}}-sample.png " alt="Smiley face" >
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No Fonts matched your search criteria.</p>
+{% endif %}
+
+{% endblock %}
