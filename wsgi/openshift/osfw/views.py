@@ -14,7 +14,7 @@ def redirect_to_index(request):
     return HttpResponseRedirect("/index/")
 
 def index(request):
-    return render_to_response('home.html')
+    return render_to_response('index.html')
 
 #	t = get_template('index.html')
 #	html = t.render(Context())
