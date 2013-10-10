@@ -21,30 +21,19 @@ def index(request):
 #	return HttpResponse(html)
 
 def test(request):
-	t = get_template('test.html')
-	html = t.render(Context())
-	return HttpResponse(html)
-
+    return render_to_response('test.html')
 
 def standards(request):
-	t = get_template('standards.html')
-	html = t.render(Context())
-	return HttpResponse(html)
+    return render_to_response('standards.html')
 
 def about(request):
-	t = get_template('about.html')
-	html = t.render(Context())
-	return HttpResponse(html)
+    return render_to_response('about.html')
 
 def peoples(request):
-	t = get_template('peoples.html')
-	html = t.render(Context())
-	return HttpResponse(html)
+    return render_to_response('peoples.html')
 
 def contact(request):
-	t = get_template('contact.html')
-	html = t.render(Context())
-	return HttpResponse(html)
+    return render_to_response('contact.html')
 
 def allfonts(request):
 	return render_to_response ('allfonts.html',  
