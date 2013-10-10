@@ -7,9 +7,9 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
 #    url(r'^$', 'openshift.views.home', name='home'),
-    url(r'^$', 'osfw.views.redirect_to_index'),
-    url(r'^index/$', 'osfw.views.index'),
-    url(r'^index/test/$', 'osfw.views.test'),
+#    url(r'^$', 'osfw.views.redirect_to_index'),
+    url(r'^$', 'osfw.views.index'),
+    url(r'^test/$', 'osfw.views.test'),
     url(r'^about/$', 'osfw.views.about'),
     url(r'^standards/$', 'osfw.views.standards'),
     url(r'^peoples/$', 'osfw.views.peoples'),
