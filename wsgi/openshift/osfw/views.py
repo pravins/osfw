@@ -70,3 +70,8 @@ def search(request):
  	        return render(request, 'searchresults.html',{'osfws': osfws, 'query': q})
 
     return render(request, 'searchfonts.html',{'error': error})
+
+def searchlang(request, langstring="en"):
+        osfws = Osfw.objects.filter(langsupport__icontains=langstring)
+# todo handle if osfws=Null
+        return render_to_response("fontsperlang.html", {"osfws": osfws, "langname" : langstring} )

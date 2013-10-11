@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     url(r'^contact/$', 'osfw.views.contact'),
     url(r'^allfonts/$', 'osfw.views.allfonts'),
     url(r'^search/$', 'osfw.views.search'),
+    url(r'^searchlang/(?P<langstring>.+)/', 'osfw.views.searchlang'),
     url(r'^get/(?P<osfw_id>\d+)/', 'osfw.views.fontinfo'),
     url(r'^like/(?P<osfw_id>\d+)/', 'osfw.views.likefont'),
 
