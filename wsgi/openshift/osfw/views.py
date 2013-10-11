@@ -41,8 +41,10 @@ def allfonts(request):
 
 
 def fontinfo(request, osfw_id=1):
+        osfwobject = Osfw.objects.get(id=osfw_id)
+        langlist = osfwobject.langsupport.split(',')
 	return render_to_response("fontinfo.html",
-							{"osfw": Osfw.objects.get(id=osfw_id  )} )
+							{"osfw": Osfw.objects.get(id=osfw_id), "langlist" : langlist} )
 def likefont(request, osfw_id):
 	if osfw_id:
 		q = Osfw.objects.get(id=osfw_id)
