@@ -28,4 +28,11 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/login/', 'myprj.views.login'),
+    url(r'^accounts/auth/', 'myprj.views.auth_view'),
+    url(r'^accounts/logout/', 'myprj.views.logout'),
+    url(r'^accounts/loggedin/', 'myprj.views.loggedin'),
+    url(r'^accounts/invalid/', 'myprj.views.invalid_login'),
+    url(r'^accounts/register/', 'myprj.views.register_user'),
+    url(r'^accounts/register_success/', 'myprj.views.register_success'),
 )
