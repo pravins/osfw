@@ -16,6 +16,16 @@
         	<h1>Open Source<span class="off"> Font World</span></h1>
 <!--            <h2>A template by Bryant Smith</h2>  -->
         </div>   
+
+{% block topright %}
+ 	 <div style="position: absolute; top: 0; right: 0; width: 100px; text-align:right; white-space: nowrap; color:#FFFFFF;">
+ 	{% if user.is_authenticated %}
+     	<h3>Welcome, {{ user.username }} !. <a href="/accounts/logout/" style="color:#1C478E">Signout</a></h3>
+ 	{% else %}
+     	<h3>Welcome, Anonymous! <a href="/accounts/login/" style="color:#1C478E">Login</a></h3>
+ 	{% endif %}
+   	  </div>
+ {% endblock topright %}
         
         <div id="menu">
         	<ul>
