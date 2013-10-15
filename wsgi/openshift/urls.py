@@ -36,3 +36,8 @@ urlpatterns = patterns('',
     url(r'^accounts/register/', 'openshift.views.register_user'),
     url(r'^accounts/register_success/', 'openshift.views.register_success'),
 )
+
+urlpatterns += patterns('',
+    url(r'^captcha/', include('captcha.urls')),
+)
+

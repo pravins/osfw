@@ -153,6 +153,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'osfw',
+    'captcha',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
