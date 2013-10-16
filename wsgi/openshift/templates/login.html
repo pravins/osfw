@@ -6,7 +6,7 @@
 {% block content_main %}
 
 	{% if forms.errors %}
-		<p class="error">Sorry, that's not a valid username or password</p>
+		<p class="error">Sorry, that is not a valid username or password</p>
 	{% endif %}
 	<form action="/accounts/auth/", method="post"> {%csrf_token%}
 		<label for="username"> Username:</lable>
