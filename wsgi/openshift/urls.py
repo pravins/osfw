@@ -35,6 +35,10 @@ urlpatterns = patterns('',
     url(r'^accounts/invalid/', 'openshift.views.invalid_login'),
     url(r'^accounts/register/', 'openshift.views.register_user'),
     url(r'^accounts/register_success/', 'openshift.views.register_success'),
+
+    #url from django-registration
+    url(r'^accounts/', include('registration.backends.default.urls')),
+
 )
 
 urlpatterns += patterns('',
