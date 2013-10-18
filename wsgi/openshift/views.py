@@ -5,6 +5,7 @@ from django.contrib import auth
 from django.core.context_processors import csrf
 from forms import MyRegistrationForm
 from django.template import RequestContext
+from django.core.urlresolvers import reverse
 
 
 #def home(request):
