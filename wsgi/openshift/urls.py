@@ -39,6 +39,7 @@ urlpatterns = patterns('',
     #url from django-registration
     url(r'^account/', include('django.contrib.auth.urls')),
     url(r'^accounts/', include('registration.backends.default.urls')),
+    url(r'^accounts/profile/', 'openshift.views.loggedin'),
 
 )
 
