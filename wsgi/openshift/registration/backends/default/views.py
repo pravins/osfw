@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.contrib.sites.models import RequestSite
 from django.contrib.sites.models import Site
-from django.core.urlresolvers import reverse
 
 from registration import signals
 from registration.models import RegistrationProfile
