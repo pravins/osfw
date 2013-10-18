@@ -4,7 +4,7 @@
 
 {% block content_main %}
 
-<form method="post" action="/accounts/login">
+<form method="post" action=".">
   {% csrf_token %}
   {{ form.as_p }}
 
