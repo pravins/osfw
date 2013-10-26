@@ -1,13 +1,11 @@
-from django.http import HttpResponse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template.loader import get_template
-from django.shortcuts import render_to_response
-from django.template import Context
+from django.shortcuts import render, render_to_response
+from django.template import Context, RequestContext
 from osfw.models import Osfw
 from django.core.context_processors import csrf
-from django.shortcuts import render
-from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, InvalidPage, EmptyPage, PageNotAnInteger
 
 
 # Create your views here.
@@ -41,12 +39,24 @@ def contact(request):
     return render_to_response ('contact.html', context_instance=RequestContext(request))
 
 def allfonts(request):
-	return render_to_response ('allfonts.html', {'osfws': Osfw.objects.all() }, context_instance=RequestContext(request))
+	osfws = Osfw.objects.all().order_by('familyname')
+	paginator = Paginator(osfws, 10)
+	page = request.GET.get('page')
+
+	try:
+	    allfonts = paginator.page(page)
+	except PageNotAnInteger:
+    # If page is not an integer, deliver first page.
+	    allfonts = paginator.page(1)
+	except EmptyPage:
+    # If page is out of range (e.g. 9999), deliver last page of results.
+	    allfonts = paginator.page(paginator.num_pages)
+	return render_to_response ('allfonts.html', {'osfws': allfonts}, context_instance=RequestContext(request))
 
 
 def fontinfo(request, osfw_id=1):
         osfwobject = Osfw.objects.get(id=osfw_id)
-        langlist = osfwobject.langsupport.split(',')
+        langlist = osfwobject.langsupport.split(' ')
 	return render_to_response("fontinfo.html", {"osfw": Osfw.objects.get(id=osfw_id), "langlist" : langlist}, context_instance=RequestContext(request) )
 
 def likefont(request, osfw_id):

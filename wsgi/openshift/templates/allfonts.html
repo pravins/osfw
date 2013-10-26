@@ -12,5 +12,21 @@
 
 </div>
 {% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if osfws.has_previous %}
+            <a href="?page={{ osfws.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ osfws.number }} of {{ osfws.paginator.num_pages }}.
+        </span>
+
+        {% if osfws.has_next %}
+            <a href="?page={{ osfws.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
 	
 {% endblock %}
