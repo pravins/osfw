@@ -3,14 +3,36 @@
 {% load static %}
 
 {% block content_main %}
-<h1>Fonts supporting {{langname}}</h1>
+<div id="fheader">
+Fonts supporting '{{langname}}'<br>
+</div><br>
+
+<ul>
 {% for osfw in osfws %}
 <div>
-<h2><a href="/get/{{ osfw.id }}/"> {{ osfw.familyname }} </a> <h2>
+<li><a href="/get/{{ osfw.id }}/"> {{ osfw.familyname }} </a></li>
 <img src="{% static "fontimages/"  %}{{ osfw.ttffilename|slice:":-4"}}-sample.png" alt="sample-image" >
-<p>{{osfw.likes}} people liked this font</p>
+<p>{{osfw.likes}} people liked this font</p><br>
 
 </div>
 {% endfor %}
+</ul>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if osfws.has_previous %}
+            <a href="?page={{ osfws.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ osfws.number }} of {{ osfws.paginator.num_pages }}.
+        </span>
+
+        {% if osfws.has_next %}
+            <a href="?page={{ osfws.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+
 	
 {% endblock %}

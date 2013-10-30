@@ -3,21 +3,46 @@
 {% load static %}
 
 {% block content_main %}
+
+
+	<div id="fheader">
+                 {{ osfw.familyname }}</p>
+	</div><br>
+
 		<ul>
-        	<li> <b> Family name:- </b>  {{ osfw.familyname }}  </li>
-        	 <li> <b> Sub Family:-</b> {{ osfw.subfamily }} </li>
-        	 <li> <b>Version:-</b> {{ osfw.version }} </li>
-		 <li> <b>Language supported:-</b>
- 		 {% for lang in langlist %}
-         	  </b><a href="/searchlang/{{lang}}">{{ lang }}</a>
- 		 {% endfor %}
- 		  </li>
-        	 <li> <b> License:-</b> {{ osfw.license }} </li>
-        	<li> <b> Copyright:-</b> {{ osfw.copyright }} </li> <br><br>
-        	 <img src="  {% static "fontimages/"  %}{{ osfw.ttffilename|slice:":-4"}}.png " alt="Smiley face" width=600px  border=1> 
-		<li> <h3> Download pdf showing Unicode coverage of <a href="  {% static "ttf/"  %}{{ osfw.imagename}}.pdf  "> {{ osfw.familyname }} </a> </h3> </li>
-		<li> <h3> Download ttf of <a href="  {% static "ttf/"  %}{{ osfw.ttffilename}}  "> {{ osfw.familyname }} </a> </h3> </li>
+        	 <li> <b>Description:-</b> {{ osfw.description }} </li><br>
+        	 <li> <b>Sub Family:-</b> {{ osfw.subfamily }}<br>
+        {% if allosfws.count > 0 %}
+		<b>Available weights: </b>
+		{% for osfws in allosfws %}
+		<i><a href="/get/{{ osfws.id }}/">{{ osfws.subfamily }}</a>&nbsp;</i>
+		{% endfor %}
+        {% endif %}
+		 </li><br>
+        	 <li> <b>Version:-</b> {{ osfw.version }} </li><br>
+		 <li> <b>Languages supported:-</b><br>
+		 {% for lang in langlist %}
+        	  </b><a href="/index/searchlang/{{lang}}">{{ lang }}</a>
+		 {% endfor %}
+		  </li><br>
+
+                 <li> <b>Script Supported:-</b><br>
+                 {% for script in scriptlist %}
+                  </b><a href="/index/searchscript/{{script}}">{{ script }}</a>
+                 {% endfor %}
+                  </li><br>
+
+
+        	 <li> <b> License:-</b>><a href="/index/searchlicense/{{osfw.license}}"> {{ osfw.license }}</a> </li><br>
+        	<li> <b> Copyright:-</b> {{ osfw.copyright }} </li> <br>
+        	<li> <b> Upstream Url:-</b> <a href="{{osfw.upstreamurl}}">{{ osfw.upstreamurl }}</a> </li> <br>
+        	 <li> <b> Glyphs:-</b> {{ osfw.glyphcount }} </li><br>
+        	 <li> <b> Character:-</b> {{ osfw.charactercount }} </li><br>
+
+
+     <a href="{% static "fontimages/"  %}{{ osfw.ttffilename|slice:":-4"}}.png "> <img src="  {% static "fontimages/"  %}{{ osfw.ttffilename|slice:":-4"}}.png " alt="{{ osfw.ttffilename|slice:":-4"}}.png" width=600px  border=1></a><br><br>
+                <li>Download pdf showing Unicode coverage of <a href="  {% static "ttf/"  %}{{ osfw.imagename}}.pdf  "> {{ osfw.familyname }} </a> </h3> </li><br>
+                <li>Download ttf of <a href="  {% static "ttf/"  %}{{ osfw.ttffilename}}  "> {{ osfw.familyname }} </a> </h3> </li><br>
+		<li>{{osfw.likes}} people liked this font <a href="/like/{{osfw.id}}">Like</a></li>
 		</ul>
-		<p>{{osfw.likes}} people liked this font</p>
-		<p><a href="/like/{{osfw.id}}">Like</a></p>
 {% endblock %}

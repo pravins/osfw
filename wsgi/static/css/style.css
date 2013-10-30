@@ -37,13 +37,16 @@ width:960px;
 
 #header h1
 {
-	position:absolute;
+
+        position:absolute;
 text-align:left;
 color:#FFFFFF;
 font-size:43px;
-color:#FFF;	
+color:#FFF;
 left:14px;
 top:18px;
+
+
 }
 
 
@@ -70,6 +73,19 @@ height:354px;
 .off
 {
 color:#67A0F5;
+}
+
+#fheader
+{
+text-align:center;
+margin-right:auto;
+color: #343434;
+font-weight: normal;
+font-family: 'Ultra', sans-serif;  
+font-size: 36px;
+line-height: 42px;
+text-transform: uppercase;
+text-shadow: 0 2px white, 0 3px #777;
 }
 
 
