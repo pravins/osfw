@@ -28,12 +28,12 @@
 
                  <li> <b>Script Supported:-</b><br>
                  {% for script in scriptlist %}
-                  </b><a href="/index/searchscript/{{script}}">{{ script }}</a>
+                  </b><a href="/searchscript/{{script}}">{{ script }}</a>
                  {% endfor %}
                   </li><br>
 
 
-        	 <li> <b> License:-</b>><a href="/index/searchlicense/{{osfw.license}}"> {{ osfw.license }}</a> </li><br>
+        	 <li> <b> License:-</b>><a href="/searchlicense/{{osfw.license}}"> {{ osfw.license }}</a> </li><br>
         	<li> <b> Copyright:-</b> {{ osfw.copyright }} </li> <br>
         	<li> <b> Upstream Url:-</b> <a href="{{osfw.upstreamurl}}">{{ osfw.upstreamurl }}</a> </li> <br>
         	 <li> <b> Glyphs:-</b> {{ osfw.glyphcount }} </li><br>
