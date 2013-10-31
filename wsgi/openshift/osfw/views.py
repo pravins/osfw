@@ -13,6 +13,7 @@ from django.core.paginator import Paginator, InvalidPage, EmptyPage, PageNotAnIn
 # Create your views here.
 
 
+
 def redirect_to_index(request):
     return HttpResponseRedirect("/index/")
 
