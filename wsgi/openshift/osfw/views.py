@@ -163,6 +163,6 @@ def search(request):
         	    allfonts = paginator.page(paginator.num_pages)
 
 
- 	        return render(request, 'search_results.html',{'osfws': allfonts, 'query': querystr, 'stype':stype}, context_instance=RequestContext(request))
+ 	        return render(request, 'searchresults.html',{'osfws': allfonts, 'query': querystr, 'stype':stype}, context_instance=RequestContext(request))
 
     return render(request, 'searchfonts.html',{'error': error}, context_instance=RequestContext(request))
