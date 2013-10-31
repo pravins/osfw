@@ -41,7 +41,7 @@
 
 
      <a href="{% static "fontimages/"  %}{{ osfw.ttffilename|slice:":-4"}}.png "> <img src="  {% static "fontimages/"  %}{{ osfw.ttffilename|slice:":-4"}}.png " alt="{{ osfw.ttffilename|slice:":-4"}}.png" width=600px  border=1></a><br><br>
-                <li>Download pdf showing Unicode coverage of <a href="  {% static "ttf/"  %}{{ osfw.imagename}}.pdf  "> {{ osfw.familyname }} </a> </h3> </li><br>
+                <li>Download pdf showing Unicode coverage of <a href="  {% static "ttf/"  %}{{ osfw.ttffilename|slice:":-4"}}.pdf  "> {{ osfw.familyname }} </a> </h3> </li><br>
                 <li>Download ttf of <a href="  {% static "ttf/"  %}{{ osfw.ttffilename}}  "> {{ osfw.familyname }} </a> </h3> </li><br>
 		<li>{{osfw.likes}} people liked this font <a href="/like/{{osfw.id}}">Like</a></li>
 		</ul>
