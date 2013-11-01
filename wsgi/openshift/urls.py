@@ -44,6 +44,15 @@ urlpatterns = patterns('',
     url(r'^account/', include('django.contrib.auth.urls')),
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^accounts/profile/', 'openshift.views.loggedin'),
+#   openid
+#    url(r'^$', 'openshift.app.views.home'),
+    url(r'^signup-email/', 'openshift.views.signup_email'),
+    url(r'^email-sent/', 'openshift.views.validation_sent'),
+    url(r'^login/$', 'openshift.views.home'),
+    url(r'^done/$', 'openshift.views.done', name='done'),
+    url(r'^email/$', 'openshift.views.require_email', name='require_email'),
+
+    url('', include('social.apps.django_app.urls', namespace='social'))
 
 )
 
