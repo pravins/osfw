@@ -155,6 +155,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'osfw',
     'captcha',
+    'social.apps.django_app.default',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
