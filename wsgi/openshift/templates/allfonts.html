@@ -10,9 +10,6 @@ Available font families
 
 <ul>
 <div>
-<li><a href="/get/{{ osfws[0].id }}/"> {{ osfws[0].familyname }} </a> </li>
-<img src="{% static "fontimages/"  %}{{ osfws[0].ttffilename|slice:":-4"}}-sample.png" alt="sample-image" >
-<p>{{osfws[0].likes}} people liked this font</p><br>
 
 {% for i in range(1,len(osfws)) %}
   {% if osfws[i].familyname != osfws[i-1].familyname %}
