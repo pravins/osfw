@@ -9,13 +9,19 @@ Available font families
 </div><br>
 
 <ul>
-{% for osfw in osfws %}
 <div>
-<li><a href="/get/{{ osfw.id }}/"> {{ osfw.familyname }} </a> </li>
-<img src="{% static "fontimages/"  %}{{ osfw.ttffilename|slice:":-4"}}-sample.png" alt="sample-image" >
-<p>{{osfw.likes}} people liked this font</p><br>
+<li><a href="/get/{{ osfws[0].id }}/"> {{ osfws[0].familyname }} </a> </li>
+<img src="{% static "fontimages/"  %}{{ osfws[0].ttffilename|slice:":-4"}}-sample.png" alt="sample-image" >
+<p>{{osfws[0].likes}} people liked this font</p><br>
+
+{% for i in range(1,len(osfws)) %}
+  {% if osfws[i].familyname != osfws[i-1].familyname %}
+<li><a href="/get/{{ osfws[i].id }}/"> {{ osfws[i].familyname }} </a> </li>
+<img src="{% static "fontimages/"  %}{{ osfws[i].ttffilename|slice:":-4"}}-sample.png" alt="sample-image" >
+<p>{{osfws[i].likes}} people liked this font</p><br>
 
 </div>
+  {% endif %}
 {% endfor %}
 </ul>
 <div class="pagination">
