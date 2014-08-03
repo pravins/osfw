@@ -10,14 +10,15 @@ Available font families
 
 <ul>
 <div>
-
-{% for i in range(1,len(osfws)) %}
-  {% if osfws[i].familyname != osfws[i-1].familyname %}
+{% for i in len(osfws)|get_range ) %}
+  {% if i != 0  %}
+   {% if osfws[i].familyname != osfws[i-1].familyname %}
 <li><a href="/get/{{ osfws[i].id }}/"> {{ osfws[i].familyname }} </a> </li>
 <img src="{% static "fontimages/"  %}{{ osfws[i].ttffilename|slice:":-4"}}-sample.png" alt="sample-image" >
 <p>{{osfws[i].likes}} people liked this font</p><br>
 
 </div>
+    {% endif %}
   {% endif %}
 {% endfor %}
 </ul>
