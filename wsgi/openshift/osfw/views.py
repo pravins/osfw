@@ -38,8 +38,8 @@ def contact(request):
 
 
 def allfonts(request):
-	osfws = Osfw.objects.all().distinct('familyname').order_by('familyname')
-#	osfws = Osfw.objects.all().values_list('familyname', flat=True).distinct()
+#	osfws = Osfw.objects.all().distinct().order_by('familyname')
+	osfws = Osfw.objects.all().values_list('familyname', flat=True).distinct()
 #	osfws = Osfw.objects.all().order_by('familyname').values_list('familyname', flat=True).distinct()
 
 	paginator = Paginator(osfws, 10)
