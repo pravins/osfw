@@ -10,7 +10,7 @@ Available font families
 
 <ul>
 <div>
-{% for i in len(osfws)|get_range ) %}
+{% for i in osfws|length|get_range ) %}
   {% if i != 0  %}
    {% if osfws[i].familyname != osfws[i-1].familyname %}
 <li><a href="/get/{{ osfws[i].id }}/"> {{ osfws[i].familyname }} </a> </li>
