@@ -38,7 +38,14 @@ def contact(request):
 
 
 def allfonts(request):
-	osfws = Osfw.objects.all().distinct().order_by('familyname')
+	a_osfws = Osfw.objects.all().distinct().order_by('familyname')
+	osfws = []
+	osfws.append(a_osfws[0])
+
+        for i in range(1, len(a_osfws)):
+	   if a_osfws[i].familyname != a_osfws[i-1].familyname:	
+	      osfws.append(a_osfws[i])	
+
 #	osfws = Osfw.objects.all().values_list('familyname', flat=True).distinct()
 #	osfws = Osfw.objects.all().order_by('familyname').values_list('familyname', flat=True).distinct()
 
