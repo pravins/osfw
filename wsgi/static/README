@@ -1,3 +1,4 @@
+
 Public, static content goes here.  Users can create rewrite rules to link to
 content in the static dir.  For example, django commonly uses /media/
 directories for static content.  For example in a .htaccess file in a
