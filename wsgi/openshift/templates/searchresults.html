@@ -10,7 +10,7 @@
     <ul>
         {% for osfw in osfws %}
         <li><h2><a href="/get/{{ osfw.id }}/"> {{ osfw.familyname }} </a> <h2></li>
-         <img src="  {% static "fontimages/"  %}{{ osfw.imagename}}-sample.png " alt="Smiley face" >
+         <img src="  {% static "fontimages/"  %}{{ osfw.ttffilename|slice:":-4"}}-sample.png " alt="Smiley face" >
         {% endfor %}
     </ul>
 {% else %}

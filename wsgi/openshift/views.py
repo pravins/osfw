@@ -46,9 +46,6 @@ def signup_email(request):
     return render_to_response('email_signup.html', {}, RequestContext(request))
 
 
-
-
-
 def login(request):
 	c = {}
 	c.update(csrf(request))
